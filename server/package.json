@@ -17,9 +17,11 @@
   "author": "AlfieriChou <alfierichou@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
     "joi": "^13.6.0",
     "joi-to-json-schema": "^3.3.0",
     "jsonschema": "^1.2.4",
+    "jsonwebtoken": "^8.3.0",
     "knex": "^0.15.2",
     "koa": "^2.5.2",
     "koa-body": "^4.0.4",
@@ -28,6 +30,7 @@
     "koa-router": "^7.4.0",
     "koa-views": "^6.1.4",
     "lodash": "^4.17.10",
+    "moment": "^2.22.2",
     "mysql": "^2.16.0",
     "nunjucks": "^3.1.3"
   },

@@ -1,4 +1,6 @@
 const config = require('../../config')
+const Base64 = require('crypto-js/enc-base64')
+const SHA256 = require('crypto-js/sha256')
 const knex = require('knex')({
   client: config.knex.client.dialect,
   connection: config.knex.client.connection
@@ -63,6 +65,11 @@ class BaseService {
       row_count: count,
       page_count: Math.ceil(count / size)
     }
+  }
+  genHash (password) {
+    const genPassword = 'alfieri' + password
+    const saltPassword = Base64.stringify(SHA256(genPassword))
+    return saltPassword
   }
 }
 

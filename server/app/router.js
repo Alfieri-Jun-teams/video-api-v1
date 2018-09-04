@@ -1,5 +1,6 @@
 const KoaRouter = require('koa-router')
 const user = require('./controller/user')
+const account = require('./controller/account')
 const swagger = require('./controller/swagger')
 const api = KoaRouter()
 
@@ -9,6 +10,8 @@ api.post('/users', user.create)
 api.get('/users/:id', user.show)
 api.put('/users/:id', user.update)
 api.delete('/users/:id', user.destroy)
+
+api.post('/login', account.login)
 
 api.get('/swagger.json', swagger.doc)
 api.get('/apidoc', swagger.index)
