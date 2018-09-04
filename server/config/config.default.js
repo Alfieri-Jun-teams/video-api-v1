@@ -4,10 +4,10 @@ module.exports = {
     client: {
       dialect: 'mysql',
       connection: {
-        host: '',
-        user: '',
-        password: '',
-        database: '',
+        host: '47.106.84.59',
+        user: 'vedio_pro',
+        password: 'vedio@2018',
+        database: 'vedio_db',
         supportBigNumbers: true,
         charset: 'utf8mb4',
         connectTimeout: 15000
