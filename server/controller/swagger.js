@@ -5,7 +5,7 @@ class SwaggerController {
     ctx.body = await swagger.generateSwagger()
   }
   async index (ctx) {
-    await ctx.render('index.html', {url: '/swagger.json'})
+    await ctx.render('index.html', {url: '/v1/swagger.json'})
   }
 }
 

@@ -3,6 +3,7 @@ const user = require('../controller/user')
 const swagger = require('../controller/swagger')
 const api = KoaRouter()
 
+api.prefix('/v1')
 api.get('/users', user.index)
 api.post('/users', user.create)
 api.get('/users/:id', user.show)
