@@ -23,6 +23,11 @@ app.use(async (ctx, next) => {
   await next()
 })
 
+app.context.knex = require('knex')({
+  client: config.knex.client.dialect,
+  connection: config.knex.client.connection
+})
+
 app
   .use(logger())
   .use(views(__dirname + '/views', {map: {html: 'nunjucks'}}))
