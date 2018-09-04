@@ -127,9 +127,9 @@ const generateSwagger = (modelPath = './app/models') => {
   let swagger = {}
   swagger.openapi = '3.0.0'
   swagger.info = {
-    'title': 'Demo API document',
+    'title': 'VMS API document',
     'version': 'v3',
-    'description': 'Using swagger3.0 & joi to generate swagger.json',
+    'description': 'Vedio management system.',
     'contact': {
       'name': 'AlfieriChou',
       'email': 'alfierichou@gmail.com',
