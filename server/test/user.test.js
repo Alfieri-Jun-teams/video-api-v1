@@ -7,7 +7,7 @@ const it = require('mocha').it
 describe('GET /users!!!', () => {
   it('response get /users result!!', () => {
     request(server)
-      .get('/users')
+      .get('/v1/users')
       .set('Accept', 'application/json')
       .expect(200)
       .then(res => {
@@ -19,7 +19,7 @@ describe('GET /users!!!', () => {
 describe('POST /users!!!', () => {
   it('response post /users success!!', () => {
     request(server)
-      .post('/users')
+      .post('/v1/users')
       .send({phone: '13322224444', password: 'hahaha.js'})
       .set('Accept', 'application/json')
       .expect(200)
@@ -30,7 +30,7 @@ describe('POST /users!!!', () => {
 
   it('requires property "password"', function () {
     request(server)
-      .post('/users')
+      .post('/v1/users')
       .send({phone: '13322221111'})
       .set('Accept', 'application/json')
       .expect(422)
@@ -41,7 +41,7 @@ describe('POST /users!!!', () => {
 
   it('requires property "phone"', function () {
     request(server)
-      .post('/users')
+      .post('/v1/users')
       .send({password: 'hahahahhaha'})
       .set('Accept', 'application/json')
       .expect(422)
@@ -54,7 +54,7 @@ describe('POST /users!!!', () => {
 describe('GET /users/:id!!!', () => {
   it('response success!!', () => {
     request(server)
-      .get('/users/1')
+      .get('/v1/users/1')
       .set('Accept', 'application/json')
       .expect(200)
       .then(res => {
@@ -66,7 +66,7 @@ describe('GET /users/:id!!!', () => {
 describe('UPDATE /users/:id!!!', () => {
   it('response success!!', () => {
     request(server)
-      .put('/users/1')
+      .put('/v1/users/1')
       .send({password: 'asdxzas123'})
       .set('Accept', 'application/json')
       .expect(200)
@@ -79,7 +79,7 @@ describe('UPDATE /users/:id!!!', () => {
 describe('DELETE /users/:id!!!', () => {
   it('response success!!', () => {
     request(server)
-      .delete('/users/1')
+      .delete('/v1/users/1')
       .set('Accept', 'application/json')
       .expect(200)
       .then(res => {

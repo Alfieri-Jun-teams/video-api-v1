@@ -9,7 +9,7 @@ let swagger
 describe('GET /swagger.json!!!', function () {
   it('respond with json', function () {
     request(server)
-      .get('/swagger.json')
+      .get('/v1/swagger.json')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200)
@@ -32,7 +32,7 @@ describe('test swagger', () => {
 describe('GET /apidoc!!!', function () {
   it('respond with json', function () {
     request(server)
-      .get('/apidoc')
+      .get('/v1/apidoc')
       .set('Accept', 'text/html')
       .expect(200)
       .then(response => {
