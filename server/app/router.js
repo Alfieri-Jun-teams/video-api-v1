@@ -1,6 +1,6 @@
 const KoaRouter = require('koa-router')
-const user = require('../controller/user')
-const swagger = require('../controller/swagger')
+const user = require('./controller/user')
+const swagger = require('./controller/swagger')
 const api = KoaRouter()
 
 api.prefix('/v1')

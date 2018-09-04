@@ -3,7 +3,7 @@ const Joi = require('joi')
 const convert = require('joi-to-json-schema')
 const _ = require('lodash')
 
-const generateSwagger = (modelPath = './models') => {
+const generateSwagger = (modelPath = './app/models') => {
   // TODO 未考虑文件夹下嵌套文件夹
   const items = fs.readdirSync(modelPath)
   let methods = []

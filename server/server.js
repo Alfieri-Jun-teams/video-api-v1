@@ -6,7 +6,7 @@ const Koa = require('koa')
 const logger = require('koa-logger')
 const koabody = require('koa-body')
 const views = require('koa-views')
-const index = require('./routes/index')
+const router = require('./app/router')
 const config = require('./config')
 
 const app = new Koa()
@@ -27,7 +27,7 @@ app
   .use(logger())
   .use(views(__dirname + '/views', {map: {html: 'nunjucks'}}))
   .use(koabody({}))
-  .use(index.middleware())
+  .use(router.middleware())
   .use(bodyParser())
 
 if (!module.parent) {
