@@ -1,0 +1,40 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Video management system.",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production nodemon server.js",
+    "lint": "standard --fix",
+    "test": "nyc mocha --exit"
+  },
+  "keywords": [
+    "joi",
+    "swagger",
+    "koa"
+  ],
+  "author": "AlfieriChou <alfierichou@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "joi": "^13.6.0",
+    "joi-to-json-schema": "^3.3.0",
+    "jsonschema": "^1.2.4",
+    "koa": "^2.5.2",
+    "koa-body": "^4.0.4",
+    "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "koa-views": "^6.1.4",
+    "lodash": "^4.17.10",
+    "nunjucks": "^3.1.3",
+    "nyc": "^12.0.2"
+  },
+  "devDependencies": {
+    "codecov": "^3.0.4",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "should": "^13.2.3",
+    "standard": "^11.0.1",
+    "supertest": "^3.1.0"
+  }
+}
