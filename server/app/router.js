@@ -13,6 +13,8 @@ api.delete('/users/:id', user.destroy)
 
 api.post('/login', account.login)
 
+api.get('/accounts', account.index)
+
 api.get('/swagger.json', swagger.doc)
 api.get('/apidoc', swagger.index)
 
