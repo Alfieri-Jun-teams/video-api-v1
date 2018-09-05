@@ -12,6 +12,10 @@ class AccountController extends BaseController {
     const params = ctx.query
     ctx.body = await service.index(ctx, params)
   }
+  async show (ctx) {
+    const params = ctx.params
+    ctx.body = await service.show(ctx, params)
+  }
 }
 
 const account = new AccountController()

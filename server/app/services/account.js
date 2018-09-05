@@ -47,6 +47,10 @@ class AccountService extends BaseService {
     }
     return data
   }
+  async show (ctx, params) {
+    const account = await super.show('account', params)
+    return account
+  }
 }
 
 const account = new AccountService()
