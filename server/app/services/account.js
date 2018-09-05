@@ -22,6 +22,31 @@ class AccountService extends BaseService {
       ctx.throw(400, '验证失败')
     }
   }
+  async index (ctx, params) {
+    const pagination = params.pagination
+    const page = params.page
+    const size = params.size
+    const sql = ctx.knex('account').whereNull('deleted_at')
+    if (params.nickname) sql.where('nickname', 'like', `%${params.nickname}%`)
+    if (params.phone) sql.where('phone', params.phone)
+    if (params.role) sql.where('role', params.role)
+    let data
+    switch (typeof pagination !== 'undefined') {
+      case true:
+        const countSql = sql.clone()
+        const { count } = await countSql.count('* as count').first()
+        sql.offset((page - 1) * size).limit(size)
+        const result = await sql
+        data = {}
+        data.result = result
+        data.paginate = super.paginate({ count, page, size })
+        break
+      case false:
+        data = await sql
+        break
+    }
+    return data
+  }
 }
 
 const account = new AccountService()

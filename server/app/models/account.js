@@ -34,7 +34,18 @@ module.exports = {
     method: 'get',
     tags: ['account'],
     summary: '获取所有用户信息',
-    query: _.pick(props, ['nickname', 'phone', 'role']),
+    query: Object.assign(
+      _.pick(props, ['nickname', 'phone', 'role']),
+      {
+        pagination: Joi.number().integer().valid(0, 1).optional().description('是否分页 0-否 1-是'),
+        page: Joi.number().integer()
+          .when('pagination', {is: 1, then: Joi.default(1).required(), otherwise: Joi.optional()})
+          .description('当前页码'),
+        size: Joi.number().integer()
+          .when('pagination', {is: 1, then: Joi.default(20).required(), otherwise: Joi.optional()})
+          .description('条目')
+      }
+    ),
     output: Joi.array().items(props).description('获取所有用户信息')
   },
   show: {
