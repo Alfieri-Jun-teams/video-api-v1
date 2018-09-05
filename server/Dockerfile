@@ -1,4 +1,4 @@
-FROM docker.io/node:8.9.4-alpine
+FROM docker.io/node:8.11.4-alpine
 
 RUN mkdir /home/app/
 WORKDIR /home/app/
