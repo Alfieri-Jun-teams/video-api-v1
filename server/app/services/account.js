@@ -51,6 +51,14 @@ class AccountService extends BaseService {
     const account = await super.show('account', params)
     return account
   }
+  async update (ctx, params) {
+    const updateResult = await super.update('account', params)
+    return updateResult
+  }
+  async destroy (ctx, params) {
+    const destroyResult = await super.destroy('account', params)
+    return destroyResult
+  }
 }
 
 const account = new AccountService()

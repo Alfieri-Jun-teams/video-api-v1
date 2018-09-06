@@ -15,6 +15,8 @@ api.post('/login', account.login)
 
 api.get('/accounts', account.index)
 api.get('/accounts/:id', account.show)
+api.put('/accounts/:id', account.update)
+api.delete('/accounts/:id', account.destroy)
 
 api.get('/swagger.json', swagger.doc)
 api.get('/apidoc', swagger.index)

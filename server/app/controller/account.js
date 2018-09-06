@@ -16,6 +16,14 @@ class AccountController extends BaseController {
     const params = ctx.params
     ctx.body = await service.show(ctx, params)
   }
+  async update (ctx) {
+    const params = Object.assign(ctx.params, ctx.request.body)
+    ctx.body = await service.update(ctx, params)
+  }
+  async destroy (ctx) {
+    const params = ctx.params
+    ctx.body = await service.destroy(ctx, params)
+  }
 }
 
 const account = new AccountController()
