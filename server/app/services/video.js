@@ -39,6 +39,15 @@ class VideoService extends BaseService {
     const video = await super.show(params)
     return video
   }
+  async update (ctx, params) {
+    if (params.favorite || params.reply || params.share) ctx.throw('关于数字字段不许修改', 400)
+    const updateResult = await super.update(params)
+    return updateResult
+  }
+  async destroy (ctx, params) {
+    const deleteResult = await super.destroy(params)
+    return deleteResult
+  }
 }
 
 const video = new VideoService()

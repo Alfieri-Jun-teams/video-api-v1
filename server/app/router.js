@@ -1,6 +1,7 @@
 const KoaRouter = require('koa-router')
 const user = require('./controller/user')
 const account = require('./controller/account')
+const video = require('./controller/video')
 const swagger = require('./controller/swagger')
 const api = KoaRouter()
 
@@ -17,6 +18,12 @@ api.get('/accounts', account.index)
 api.get('/accounts/:id', account.show)
 api.put('/accounts/:id', account.update)
 api.delete('/accounts/:id', account.destroy)
+
+api.get('/videos', video.index)
+api.post('/videos', video.create)
+api.get('/videos/:id', video.show)
+api.put('/videos/:id', video.update)
+api.delete('/videos/:id', video.destroy)
 
 api.get('/swagger.json', swagger.doc)
 api.get('/apidoc', swagger.index)
