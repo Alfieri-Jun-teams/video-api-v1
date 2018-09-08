@@ -1,11 +1,11 @@
-const Account = require('../models/account')
+const model = require('../models')
 const BaseController = require('../common/base_controller')
 const service = require('../services')
 
 class AccountController extends BaseController {
   async login (ctx) {
     const params = ctx.request.body
-    await super.validate(Account.schema, Account.login, params, ctx)
+    await super.validate(model.account.schema, model.account.login, params, ctx)
     ctx.body = await service.account.login(ctx, params)
   }
   async index (ctx) {

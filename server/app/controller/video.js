@@ -1,4 +1,4 @@
-const Video = require('../models/video')
+const model = require('../models')
 const BaseController = require('../common/base_controller')
 const service = require('../services')
 
@@ -9,7 +9,7 @@ class VideoController extends BaseController {
   }
   async create (ctx) {
     const params = ctx.request.body
-    await super.validate(Video.schema, Video.create, params, ctx)
+    await super.validate(model.video.schema, model.video.create, params, ctx)
     ctx.body = await service.video.create(ctx, params)
   }
   async show (ctx) {
